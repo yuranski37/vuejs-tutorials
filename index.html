@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        .box {
+            background-color: pink;
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+        
+    <div id="app">
+        
+        <div class="box" v-show="false"></div>
+
+    </div>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: "#app"
+        })
+    </script>
+</body>
+</html>
