@@ -1,11 +1,16 @@
+var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, './build'),
     publicPath: '/build/',
     filename: 'bundle.js'
+  },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true
   },
   module: {
     loaders: [
@@ -35,7 +40,12 @@ module.exports = {
         }
       }
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  }
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -50,6 +60,6 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin()
   ])
 }
