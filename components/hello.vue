@@ -3,8 +3,8 @@
 </template>
 
 <script>
-    export default {
-        data() {
+    module.exports = {
+        data: function() {
             return {
                 greeting: 'Привет Webpack'
             }
