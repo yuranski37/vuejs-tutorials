@@ -7633,16 +7633,15 @@ return Vue$3;
 
 /***/ },
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-"use strict";
 //
 //
 //
 //
 
-/* harmony default export */ exports["default"] = {
-    data() {
+module.exports = {
+    data: function () {
         return {
             greeting: 'Привет Webpack'
         };
