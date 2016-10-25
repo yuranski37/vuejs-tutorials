@@ -2,7 +2,7 @@ var Vue = require('vue')
 var hello = require('vue!./components/hello.vue')
 
 new Vue({
-    el: 'body',
+    el: '#app',
     components: {
         hello: hello
     }
