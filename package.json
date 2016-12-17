@@ -10,8 +10,9 @@
   },
   "devDependencies": {
     "browserify": "*",
-    "vue": "*",
-    "vueify": "*",
+    "vue": "^1.0.24",
+    "vue-template-compiler": "^2.1.6",
+    "vueify": "^8.4.1",
     "watchify": "^3.7.0"
   },
   "keywords": [],
