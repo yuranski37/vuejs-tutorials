@@ -9,31 +9,33 @@
 
     <div id="app">
         
-        <dialog btn-text="Согласен">Вопрос 1</dialog>
-        <dialog btn-text="Хорошо">Вопрос 2</dialog>
+        <v-dialog btn-text="Согласен">Вопрос 1</v-dialog>
+        <v-dialog btn-text="Хорошо">Вопрос 2</v-dialog>
 
     </div>
 
     <template id="dialog-template">
-        <div class="Dialog" v-show="active">
-            <div class="Dialog__overlay" @click="close()"></div>
-            <div class="Dialog__content">
-                <div class="Dialog__body">
-                    <slot></slot>
-                </div>
-                <div class="Dialog__footer">
-                    <button class="btn" @click="onCancel()">Отмена</button>
-                    <button class="btn btn-ok" @click="onConfirm()">{{ btnText }}</button>
+        <div>
+            <div class="Dialog" v-show="active">
+                <div class="Dialog__overlay" @click="close()"></div>
+                <div class="Dialog__content">
+                    <div class="Dialog__body">
+                        <slot></slot>
+                    </div>
+                    <div class="Dialog__footer">
+                        <button class="btn" @click="onCancel()">Отмена</button>
+                        <button class="btn btn-ok" @click="onConfirm()">{{ btnText }}</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <a class="link" href="#" @click="open()">ссылка</a>
+            <a class="link" href="#" @click="open()">ссылка</a>
+        </div>
     </template>
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
     <script>
-        Vue.component('dialog', {
+        Vue.component('v-dialog', {
             template: '#dialog-template',
             data: function() {
                 return {
