@@ -1,5 +1,5 @@
 var Vue = require('vue')
-var VueRouter = require('vue-router')
+import VueRouter from 'vue-router'
 
 var Brands = require('./views/Brands.vue')
 var Contacts = require('./views/Contacts.vue')
