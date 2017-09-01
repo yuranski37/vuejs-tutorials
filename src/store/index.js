@@ -10,7 +10,9 @@ const store = new Vuex.Store({
   },
   getters: {
     results(state) {
-      return state.results.map(item => {
+      let results = state.results
+      
+      return results.map(item => {
         item.url = 'https://ru.wikipedia.org/wiki/' + item.title
         return item
       })
