@@ -7,24 +7,23 @@
 </head>
 <body>
 
-    <div id="app">
-        
-        <v-dialog btn-text="Согласен">Вопрос 1</v-dialog>
-        <v-dialog btn-text="Хорошо">Вопрос 2</v-dialog>
-
+    <div id="app">  
+        <v-dialog btn-text="Согласен">ПІДСТАВЛЯТИ СВОЄ ЗНАЧЕННЯ</v-dialog>
+        <v-dialog btn-text="Хорошо">Вопрос 2</v-dialog> //
     </div>
 
-    <template id="dialog-template">
+    <template id="dialog-template"> //ІД НОВОГО КОМПОНЕНТА
         <div>
             <div class="Dialog" v-show="active">
                 <div class="Dialog__overlay" @click="close()"></div>
                 <div class="Dialog__content">
                     <div class="Dialog__body">
-                        <slot></slot>
+                        <slot></slot> //ПІДСТАВЛЯТИ СВОЄ ЗНАЧЕННЯ
                     </div>
                     <div class="Dialog__footer">
                         <button class="btn" @click="onCancel()">Отмена</button>
-                        <button class="btn btn-ok" @click="onConfirm()">{{ btnText }}</button>
+                        <button class="btn btn-ok" @click="onConfirm()">{{ btnText }}</button> //НОВИЙ ТЕКСТ
+                        
                     </div>
                 </div>
             </div>
@@ -36,13 +35,13 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
     <script>
         Vue.component('v-dialog', {
-            template: '#dialog-template',
+            template: '#dialog-template', //РЕЄСТРАЦІЯ id="dialog-template 
             data: function() {
                 return {
                     active: false
                 }
             },
-            props: ['btnText'],
+            props: ['btnText'], //ПРОПЕРТЯ
             methods: {
                 open: function() {
                     this.active = true
